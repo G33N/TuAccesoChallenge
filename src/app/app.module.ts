@@ -9,12 +9,22 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DragulaModule } from 'ng2-dragula';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(),DragulaModule.forRoot(), AppRoutingModule],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    DragulaModule.forRoot(),
+    AppRoutingModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
+  ],
   providers: [
     StatusBar,
     SplashScreen,
@@ -22,4 +32,4 @@ import { DragulaModule } from 'ng2-dragula';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

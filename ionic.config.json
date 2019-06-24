@@ -1,5 +1,7 @@
 {
-  "name": "dragndrop",
-  "integrations": {},
+  "name": "tuaccesochallenge",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
